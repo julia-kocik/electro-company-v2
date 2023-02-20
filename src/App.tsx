@@ -1,10 +1,11 @@
+import Header from './components/Header/Header'
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <div>
-      Electro-specjalisci 
+      <Header/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
