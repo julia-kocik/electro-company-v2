@@ -17,6 +17,7 @@
     "plugins": [
         "react"
     ],
+    "ignorePatterns": ["index.tsx"],
     "rules": {
         "react/react-in-jsx-scope": "off"
     }
