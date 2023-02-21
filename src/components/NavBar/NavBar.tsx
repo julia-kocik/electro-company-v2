@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import Logo from '../Logo/Logo'
+import Navigation from '../Navigation/Navigation'
 import './NavBar.scss'
 
 const NavBar = (): JSX.Element => {
@@ -9,7 +11,10 @@ const NavBar = (): JSX.Element => {
     })
   }, [])
   return (
-    <div className={scroll ? 'navbar_container navbar_scroll' : 'navbar_container'}>NavBar</div>
+    <div className={scroll ? 'navbar_container navbar_scroll' : 'navbar_container'}>
+      <Logo />
+      <Navigation/>
+    </div>
   )
 }
 
