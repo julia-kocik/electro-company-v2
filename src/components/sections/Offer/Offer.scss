@@ -1,4 +1,35 @@
+@import '../../../settings.scss';
+
 .offer_container {
     height: 100vh;
-    background-color: red;
+    background-size: 100% 100%;
+    position: relative;
+    img {
+        height: 100%;
+        z-index: -2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0.9;
+        filter: brightness(25%); 
+    }
+    .offer_content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 60%;
+        height: 60%;
+        display: grid;
+        place-items: center;
+        ul{
+            list-style-type: none;
+            li {
+                color: $color-white;
+                font-size: 48px;
+                margin-top: 14px;
+            }
+        }
+    }
 }
