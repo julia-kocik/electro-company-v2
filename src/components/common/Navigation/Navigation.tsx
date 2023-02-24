@@ -9,16 +9,16 @@ const Navigation = (): JSX.Element => {
           <a href="#start">Start</a>
         </li>
         <li>
-          <a href="#uslugi">Oferta</a>
+          <a href="#offer">Oferta</a>
         </li>
         <li>
-          <a href="#blog">Blog</a>
+          <a href="#blogsection">Blog</a>
         </li>
         <li>
-          <a href="#opinie">Opinie</a>
+          <a href="#reviews">Opinie</a>
         </li>
         <li>
-          <a href="#kontakt">Kontakt</a>
+          <a href="#contact">Kontakt</a>
         </li>
       </ul>
     </div>

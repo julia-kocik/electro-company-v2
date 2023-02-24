@@ -1,15 +1,15 @@
-@import '../../settings.scss';
+@import '../../../settings.scss';
 
 .navbar_container {
     height: 80px;
     background-color: transparent;
     transition: $transition;
     display: flex;
+    position: fixed;
+    width: 100%;
 }
 
 .navbar_scroll {
     background-color: $color-black;
     opacity: 0.9;
-    position: fixed;
-    width: 100%;
 }

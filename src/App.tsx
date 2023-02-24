@@ -1,9 +1,9 @@
-import Header from './components/Header/Header'
+import Homepage from './components/views/Homepage/Homepage'
 
 const App = (): JSX.Element => {
   return (
     <div>
-      <Header/>
+      <Homepage/>
     </div>
   )
 }
