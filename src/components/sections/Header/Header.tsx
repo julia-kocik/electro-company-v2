@@ -9,10 +9,10 @@ const Header = (): JSX.Element => {
       <NavBar />
       <div className='header_content'>
         <div className='header_content_box'>
-        <h2>Energetyczne rozwiązania na miarę Twoich potrzeb</h2>
+        <h2>Elektryczne rozwiązania na miarę Twoich potrzeb</h2>
           <h3>Nasza firma oferuje szeroki zakres usług elektrycznych, obejmujący zarówno instalacje, jak i naprawy i konserwację. Zaufaj naszej wiedzy i doświadczeniu, a zyskasz spokojną głowę w kwestii bezpieczeństwa i niezawodności swoich instalacji elektrycznych.</h3>
           <a href="#offer">
-            <Button title='Offer' color='light'/>
+            <Button title='Oferta' color='light'/>
           </a>
         </div>
       </div>
