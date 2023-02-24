@@ -17,6 +17,10 @@
                 color: $color-white;
                 font-size: $base-size;
                 padding: 0 24px;
+                &:hover {
+                    color: #fff;
+                    font-weight: bold;
+                }
             }
         }
     }
