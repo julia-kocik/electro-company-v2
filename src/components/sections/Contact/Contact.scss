@@ -1,16 +1,23 @@
 @import '../../../settings.scss';
 
 .contact_container {
-    height: 100vh;
+    height: 120vh;
     background-color: rgba(31, 30, 30, 0.6);
     color: $color-white;
     display: flex;
     flex-direction: column;
-    h2{
+    h2 {
         flex: 0 0 20%;
     }
+    .contact_data {
+        flex: 0 0 10%;
+        display: flex;
+        align-self: center; 
+        justify-content: space-between;
+        width: 50%;      
+    }
     .form_container {
-        flex: 0 0 80%;
+        flex: 0 0 40%;
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -45,5 +52,14 @@
                 resize: none;
             }
          }
+    }
+    .company_data {
+        flex: 0 0 10%;
+        address {
+            height: 100%;
+            display: grid;
+            place-items: end;
+            padding-right: 60px;
+        }
     }
 }
