@@ -24,6 +24,9 @@
         display: grid;
         place-items: center;
         ul{
+            box-shadow: $box-shadow;
+            border-radius: 20px;
+            padding: 40px 200px;
             list-style-type: none;
             li {
                 color: #fff;
