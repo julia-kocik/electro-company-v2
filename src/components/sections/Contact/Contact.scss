@@ -1,4 +1,35 @@
+@import '../../../settings.scss';
+
 .contact_container {
     height: 100vh;
     background-color: rgba(31, 30, 30, 0.6);
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    h2{
+        flex: 0 0 20%;
+    }
+    form {
+        flex: 0 0 80%;
+        border: 2px solid white;
+       input, textarea {
+        background-color: transparent;
+        border-color: $color-white;
+        border-radius: 6px;
+        outline: none;
+        &:focus {
+            color: #fff;
+            border-color: $color-white;
+
+        }
+       }
+       input {
+        height: 30px;
+       }
+       textarea {
+        height: 100px;
+        width: 200px;
+        resize: none;
+       }
+    }
 }
