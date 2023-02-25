@@ -4,7 +4,7 @@ import './Offer.scss'
 const Offer = (): JSX.Element => {
   return (
     <div className='offer_container' id='offer'>
-      <img src="https://cdn.pixabay.com/photo/2019/01/08/10/58/smart-home-3920905_960_720.jpg" alt="Smart Home" />
+      <img src="https://images.unsplash.com/photo-1514803400321-3ca29fc47334?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80" alt="Smart Home" />
       <div className="offer_content">
         <ul>
           <li>Instalacje elektryczne</li>

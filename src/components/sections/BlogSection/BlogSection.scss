@@ -1,4 +1,25 @@
+@import '../../../settings.scss';
+
+
 .blog_container {
     height: 100vh;
-    background-color: yellow;
+    background-color: rgba(31, 30, 30, 0.6);
+    color: $color-white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 80px;
+    place-items: center;
+    padding: 0 80px;
+    .blog_article {
+        border: 1px solid $color-white;
+        box-shadow: $box-shadow;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        padding: 30px 40px;
+        p {
+            font-size: 22px;
+        }
+    }
+
 }
