@@ -1,10 +1,23 @@
-import Homepage from './components/views/Homepage/Homepage'
 
+import Homepage from './components/views/Homepage/Homepage'
+import {
+  createBrowserRouter,
+  RouterProvider
+} from 'react-router-dom'
+import BlogContent from './components/views/BlogContent/BlogContent'
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Homepage/>
+  },
+  {
+    path: '/blog',
+    element: <BlogContent/>
+  }
+])
 const App = (): JSX.Element => {
   return (
-    <div>
-      <Homepage/>
-    </div>
+    <RouterProvider router={router} />
   )
 }
 

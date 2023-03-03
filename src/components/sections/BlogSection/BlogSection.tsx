@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Button from '../../common/Button/Button'
 import Title from '../../common/Title/Title'
 import './BlogSection.scss'
@@ -12,17 +13,23 @@ const BlogSection = (): JSX.Element => {
         <article className='blog_article'>
           <h2>Title of Article</h2>
           <p>{str.substring(0, 200)}...</p>
-          <Button title='czytaj wiecej' color='light'/>
+          <Link to='/blog'>
+            <Button title='czytaj wiecej' color='light' />
+          </Link>
         </article>
         <article className='blog_article'>
           <h2>Title of Article</h2>
           <p>{str.substring(0, 200)}...</p>
-          <Button title='czytaj wiecej' color='light'/>
+          <Link to='/blog'>
+            <Button title='czytaj wiecej' color='light'/>
+          </Link>
         </article>
         <article className='blog_article'>
           <h2>Title of Article</h2>
           <p>{str.substring(0, 200)}...</p>
-          <Button title='czytaj więcej' color='light'/>
+          <Link to='/blog'>
+            <Button title='czytaj wiecej' color='light' />
+          </Link>
         </article>
       </div>
     </div>
