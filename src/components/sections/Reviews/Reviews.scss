@@ -1,4 +1,33 @@
+@import '../../../settings.scss';
+
 .reviews_container {
     height: 100vh;
     background-color: rgba(147, 145, 145, 0.1);
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        flex: 0 0 20%;
+    }
+    .reviews_container_inner {
+        flex: 0 0 80%;
+        position: relative;
+        .reviews_content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-200%,-50%);
+            width: 60%;
+            height: 60%;
+            display: grid;
+            place-items: center;
+            box-shadow: $box-shadow;
+            border-radius: 20px;
+            color: #fff;
+        }
+        .reviews_content_active {
+            transform: translate(-50%,-50%);
+
+        }
+    }
 }
