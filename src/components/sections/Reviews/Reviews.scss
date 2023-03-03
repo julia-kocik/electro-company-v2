@@ -24,6 +24,7 @@
             box-shadow: $box-shadow;
             border-radius: 20px;
             color: #fff;
+            padding: 0 60px
         }
         .reviews_content_active {
             transform: translate(-50%,-50%);
@@ -33,7 +34,6 @@
         flex: 0 0 10%;
         display: flex;
         justify-content: center;
-        align-items: center;
         span {
             padding: 0 10px;
         }
