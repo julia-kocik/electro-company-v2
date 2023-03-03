@@ -10,7 +10,7 @@
         flex: 0 0 20%;
     }
     .reviews_container_inner {
-        flex: 0 0 80%;
+        flex: 0 0 70%;
         position: relative;
         .reviews_content {
             position: absolute;
@@ -27,7 +27,25 @@
         }
         .reviews_content_active {
             transform: translate(-50%,-50%);
-
+        }
+    }
+    .reviews_dots_container {
+        flex: 0 0 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            padding: 0 10px;
+        }
+        .reviews_icon {
+            transition: $transition;
+            cursor: pointer;
+            font-size: 24px;
+            overflow: hidden;
+            border-radius: 50%;
+            &:hover {
+                background: $color-white;
+            }
         }
     }
 }
