@@ -1,4 +1,5 @@
-import React, { type ChangeEvent, useState, type FormEvent } from 'react'
+import React, { type ChangeEvent, useState, type FormEvent, useRef, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Button from '../../common/Button/Button'
 import Subtitle from '../../common/Subtitle/Subtitle'
 import Title from '../../common/Title/Title'
@@ -17,8 +18,18 @@ const initialState: initialStateInterface = {
 }
 
 const Contact = (): JSX.Element => {
+  const location = useLocation()
+  const contactRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (location.hash === '#contact' && contactRef.current !== null) {
+      contactRef.current.scrollIntoView()
+    }
+  }, [location])
+
   const [formfields, setFormfields] = useState(initialState)
   const { name, email, message } = formfields
+
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>): void => {
     setFormfields({ ...formfields, [e.target.name]: e.target.value })
   }
@@ -28,7 +39,7 @@ const Contact = (): JSX.Element => {
     setFormfields(() => initialState)
   }
   return (
-    <div className='contact_container' id='contact'>
+    <div className='contact_container' ref={contactRef} id='contact'>
       <Title title='Skontaktuj się z nami' />
       <div className='contact_data'>
         <Subtitle title='Email: biuro@montroe.com' />

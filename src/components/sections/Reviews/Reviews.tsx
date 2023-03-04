@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Title from '../../common/Title/Title'
 import './Reviews.scss'
 import { BsCircle } from 'react-icons/bs'
 import Subtitle from '../../common/Subtitle/Subtitle'
+import { useLocation } from 'react-router-dom'
 
 const arr = [
   'Niedawno przeszedłem do tej firmy elektrycznej i jestem zaskoczony, ile pieniędzy oszczędzam każdego miesiąca na rachunkach za energię. Dodatkowo, ich obsługa klienta jest na najwyższym poziomie!',
@@ -15,6 +16,14 @@ const arr = [
 
 const Reviews = (): JSX.Element => {
   const [active, setActive] = useState(0)
+  const location = useLocation()
+  const reviewsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (location.hash === '#reviews' && reviewsRef.current !== null) {
+      reviewsRef.current.scrollIntoView()
+    }
+  }, [location])
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -34,7 +43,7 @@ const Reviews = (): JSX.Element => {
     setActive(dot)
   }
   return (
-        <div className='reviews_container' id='reviews'>
+    <div className='reviews_container' ref={reviewsRef} id='reviews'>
             <Title title='Opinie klientów'/>
             <div className='reviews_container_inner'>
               {arr.map((item, index) => (

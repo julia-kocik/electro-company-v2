@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Navigation.scss'
 
 const Navigation = (): JSX.Element => {
@@ -6,19 +7,19 @@ const Navigation = (): JSX.Element => {
     <div className='navigation_container'>
       <ul>
         <li>
-          <a href="#start">Start</a>
+          <Link to="/#start">Start</Link>
         </li>
         <li>
-          <a href="#offer">Oferta</a>
+          <Link to="/#offer">Oferta</Link>
         </li>
         <li>
-          <a href="#blogsection">Blog</a>
+          <Link to="/#blogsection">Blog</Link>
         </li>
         <li>
-          <a href="#reviews">Opinie</a>
+          <Link to="/#reviews">Opinie</Link>
         </li>
         <li>
-          <a href="#contact">Kontakt</a>
+          <Link to="/#contact">Kontakt</Link>
         </li>
       </ul>
     </div>
