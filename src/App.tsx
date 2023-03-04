@@ -4,7 +4,8 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom'
-import BlogContent from './components/views/BlogContent/BlogContent'
+import Article from './components/views/Article/Article'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -12,9 +13,10 @@ const router = createBrowserRouter([
   },
   {
     path: '/blog/:id',
-    element: <BlogContent/>
+    element: <Article/>
   }
 ])
+
 const App = (): JSX.Element => {
   return (
     <RouterProvider router={router} />
