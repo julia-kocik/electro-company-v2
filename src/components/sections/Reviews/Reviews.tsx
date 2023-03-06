@@ -15,7 +15,7 @@ const arr = [
 ]
 
 const Reviews = (): JSX.Element => {
-  const [active, setActive] = useState(0)
+  const [current, setCurrent] = useState(0)
   const location = useLocation()
   const reviewsRef = useRef<HTMLDivElement>(null)
 
@@ -27,35 +27,46 @@ const Reviews = (): JSX.Element => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setActive(active => {
-        if (active === arr.length - 1) {
+      setCurrent(current => {
+        if (current === arr.length - 1) {
           return 0
         }
-        return active + 1
+        return current + 1
       })
     }, 5000)
     return () => {
       clearInterval(intervalId)
     }
-  }, [])
+  }, [current])
 
   const onDotClickHandler = (dot: number): void => {
-    setActive(dot)
+    setCurrent(dot)
   }
+
   return (
     <div className='reviews_container' ref={reviewsRef} id='reviews'>
             <Title title='Opinie klientów'/>
-            <div className='reviews_container_inner'>
-              {arr.map((item, index) => (
-                <div key={index} className={`reviews_content ${active === index ? 'reviews_content_active' : ''}`}>
-                  <Subtitle title={item}></Subtitle>
-                </div>
-              ))}
+      <div className='reviews_container_inner'>
+        <div className="reviews_content_container">
+          {arr.map((item, index) => {
+            let position = 'prev'
+            if (current === index) {
+              position = 'active'
+            }
+            if (current === index + 1 || (current === 0 && index === arr.length - 1)) {
+              position = 'next'
+            }
+            return (<div key={index} className={`reviews_content ${position}`}>
+              <Subtitle title={item}></Subtitle>
+            </div>
+            )
+          })}
+        </div>
       </div>
-      <div className='reviews_dots_container'>
-      {Array(arr.length).fill(<BsCircle className='reviews_icon'/>).map((item, index) => (
-        <span onClick={() => onDotClickHandler(index)} key={index}>{item}</span>
-      ))}
+      <div className={'reviews_dots_container'}>
+        {Array(arr.length).fill(0).map((_item, index) => (
+          <BsCircle className={`reviews_icon ${current === index ? 'active' : ''}`} onClick={() => onDotClickHandler(index)} key={index} />
+        ))}
       </div>
         </div >
   )
