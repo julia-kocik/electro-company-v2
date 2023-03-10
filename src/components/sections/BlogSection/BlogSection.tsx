@@ -16,7 +16,7 @@ const BlogSection = (): JSX.Element => {
   }, [location])
   return (
     <div className='blog_container' ref={blogsectionRef} id='blogsection'>
-      <Title title='Poczytaj naszego bloga'/>
+      <Title title='Poznaj nas lepiej'/>
       <div className="blog_container_inner">
         <article className='blog_article'>
           <h2>Title of Article</h2>
