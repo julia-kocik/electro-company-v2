@@ -33,9 +33,21 @@ const Contact = (): JSX.Element => {
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>): void => {
     setFormfields({ ...formfields, [e.target.name]: e.target.value })
   }
-  const onSubmitHandler = (e: FormEvent<HTMLFormElement>): void => {
+  const onSubmitHandler = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
-    console.log(formfields)
+    try {
+      const response = await fetch('https://formspree.io/f/xyylawko', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formfields)
+      })
+      const data = await response.json()
+      console.log('Success:', JSON.stringify(data))
+    } catch (error) {
+      console.log(error)
+    }
     setFormfields(() => initialState)
   }
   return (
@@ -46,6 +58,7 @@ const Contact = (): JSX.Element => {
         <Subtitle title='Telefon: 515-737-356' />
       </div>
       <div className="form_container">
+         {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
         <form onSubmit={onSubmitHandler}>
           <input required type="text" id="name" name="name" placeholder='Imię' value={name} onChange={onChangeHandler} /><br />
           <input required type="email" id="email" name="email" placeholder='Adres email' value={email} onChange={onChangeHandler}/><br/>
