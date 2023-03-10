@@ -9,21 +9,17 @@ interface initialStateInterface {
   name: string
   email: string
   message: string
-  img: any
 }
 
 const initialState: initialStateInterface = {
   name: '',
   email: '',
-  message: '',
-  img: ''
+  message: ''
 }
 
 const Contact = (): JSX.Element => {
   const location = useLocation()
   const contactRef = useRef<HTMLDivElement>(null)
-  const [formfields, setFormfields] = useState(initialState)
-  const { name, email, message, img } = formfields
 
   useEffect(() => {
     if (location.hash === '#contact' && contactRef.current !== null) {
@@ -31,37 +27,8 @@ const Contact = (): JSX.Element => {
     }
   }, [location])
 
-  useEffect(() => {
-    console.log(img)
-  }, [img])
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const file = e.target.files?.[0]
-    const reader = new FileReader()
-    console.log('here', reader, file)
-
-    reader.onload = (event: ProgressEvent<FileReader>) => {
-      const image = new Image()
-      image.onload = () => {
-        const width = image.width
-        const height = image.height
-        console.log(`Width: ${width}, Height: ${height}`)
-        setFormfields(() => {
-          return {
-            ...formfields,
-            img: {
-              width,
-              height,
-              src: file?.name
-            }
-          }
-        })
-      }
-      image.src = event.target?.result as string
-    }
-
-    reader.readAsDataURL(file as Blob)
-  }
+  const [formfields, setFormfields] = useState(initialState)
+  const { name, email, message } = formfields
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>): void => {
     setFormfields({ ...formfields, [e.target.name]: e.target.value })
@@ -82,9 +49,8 @@ const Contact = (): JSX.Element => {
         <form onSubmit={onSubmitHandler}>
           <input required type="text" id="name" name="name" placeholder='Imię' value={name} onChange={onChangeHandler} /><br />
           <input required type="email" id="email" name="email" placeholder='Adres email' value={email} onChange={onChangeHandler}/><br/>
-          <input type="file" id='img' name='img' onChange={handleFileUpload} />
           <textarea required id="message" name="message" placeholder='Wiadomość' value={message} onChange={onChangeHandler}></textarea>
-          <Button title='Wyślij' color='light' />
+          <Button title='Wyślij' color='light'/>
         </form>
       </div>
       <div className="company_data">
