@@ -8,6 +8,15 @@
     position: fixed;
     z-index: 1;
     width: 100%;
+    .burger_mobile {
+       
+        display: grid;
+        place-items: center;
+        .burger_icon {
+            font-size: 36px;
+            color: $color-white;
+        }
+    }
 }
 
 .navbar_scroll {
@@ -23,5 +32,8 @@
 }
 
 @include mobile {
-    
+    .navbar_container {
+        background-color: $color-black;
+        opacity: 1;
+    }
 }

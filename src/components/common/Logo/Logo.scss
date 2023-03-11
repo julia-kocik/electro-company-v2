@@ -20,5 +20,10 @@
 }
 
 @include mobile {
-    
+    .logo_container {
+        flex: 0 0 20%;
+        .logo {
+            font-size: 36px;
+        }
+    }
 }
