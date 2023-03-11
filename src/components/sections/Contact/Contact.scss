@@ -64,3 +64,30 @@
         }
     }
 }
+
+@include tablet {
+    .contact_container {
+        height: 100vh;
+        h2 {
+            flex: 0 0 10%;
+        }
+        .contact_data {
+            width: 90%;   
+        }
+        .form_container {
+            form {
+                height: 90%;
+                width: 80%;
+            }
+        }
+        .company_data {
+            address {
+              font-size: 32px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    
+}

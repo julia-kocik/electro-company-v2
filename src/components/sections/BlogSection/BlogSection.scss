@@ -29,3 +29,19 @@
         }
     }
 }
+
+@include tablet {
+    .blog_container {
+        height: 180vh;
+        h2 {
+            flex: 0 0 10%;
+        }
+        .blog_container_inner {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@include mobile {
+    
+}

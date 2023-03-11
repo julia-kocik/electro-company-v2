@@ -69,3 +69,32 @@
         }
     }
 }
+
+
+@include tablet {
+    .reviews_container {
+        h2 {
+            flex: 0 0 10%;
+        }
+        .reviews_container_inner {
+            .reviews_content_container {
+                height: 80%;
+                width: 80%;
+            }
+            .reviews_content {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .reviews_dots_container {
+            .reviews_icon {
+                font-size: 40px;
+            }
+        }
+    }
+
+}
+
+@include mobile {
+    
+}

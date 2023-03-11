@@ -30,3 +30,20 @@
         }
     } 
 }
+
+
+@include tablet {
+    .header_container {
+       height: 80px;
+       background-color: black;
+       background-image: none;
+        .header_content {
+            display: none;
+        }
+    }
+    
+}
+
+@include mobile {
+    
+}
