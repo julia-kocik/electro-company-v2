@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ title, color }): JSX.Element => {
-  const className = `btn ${color === 'light' ? 'btn_light' : ''} ${color === 'dark' ? 'btn_dark' : ''}`
+  const className = `btn ${color === 'light' ? 'btn_light' : ''} ${color === 'dark' ? 'btn_dark' : ''}  ${color === 'disabled' ? 'btn_disabled' : ''}`
   return (
         <button type='submit' className={className}>
             <span><b>{title}</b></span>
