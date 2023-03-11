@@ -1,7 +1,7 @@
 @import '../../../settings.scss';
 
 .contact_container {
-    height: 120vh;
+    height: 130vh;
     background-color: rgba(31, 30, 30, 0.6);
     color: $color-white;
     display: flex;
@@ -55,6 +55,7 @@
     }
     .company_data {
         flex: 0 0 10%;
+        padding-bottom: 20px;
         address {
             height: 100%;
             display: grid;
