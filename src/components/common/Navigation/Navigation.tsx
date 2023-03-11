@@ -5,14 +5,15 @@ import './Navigation.scss'
 interface NavigationProps {
   showMobMenu: boolean
   setShowMobMenu: any
+  burgerRef: any
 }
 
-const Navigation: React.FC<NavigationProps> = ({ showMobMenu, setShowMobMenu }): JSX.Element => {
+const Navigation: React.FC<NavigationProps> = ({ showMobMenu, setShowMobMenu, burgerRef }): JSX.Element => {
   const ref = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent): void => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
+      if (ref.current && !ref.current.contains(event.target as Node) && !burgerRef.current.contains(event.target)) {
         setShowMobMenu(false)
       }
     }
@@ -21,7 +22,7 @@ const Navigation: React.FC<NavigationProps> = ({ showMobMenu, setShowMobMenu }):
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [])
+  }, [burgerRef, ref])
 
   return (
     <div className='navigation_container'>
