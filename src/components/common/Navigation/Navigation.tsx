@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './Navigation.scss'
 
-const Navigation = (): JSX.Element => {
+interface NavigationProps {
+  showMobMenu: boolean
+  setShowMobMenu: any
+}
+
+const Navigation: React.FC<NavigationProps> = ({ showMobMenu, setShowMobMenu }): JSX.Element => {
+  const ref = useRef<HTMLUListElement>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent): void => {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setShowMobMenu(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
   return (
     <div className='navigation_container'>
-      <ul>
+      <ul ref={ref} className={`${showMobMenu ? 'show' : ''}`}>
         <li>
           <Link to="/#start">Start</Link>
         </li>
