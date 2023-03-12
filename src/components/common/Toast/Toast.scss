@@ -23,3 +23,11 @@
         color: $color-white;
     }
 }
+
+
+
+@include mobile {
+    .toast_container {
+        width: 200px;
+    }
+} 

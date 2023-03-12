@@ -1,6 +1,16 @@
+@import '../../../settings.scss';
+
 .title {
     margin: 38px 0 0 0;
     font-size: 48px;
     display: grid;
     place-items: center;
+    text-align: center;
+}
+
+
+@include mobile {
+    .title {
+        font-size: 36px;
+    }
 }

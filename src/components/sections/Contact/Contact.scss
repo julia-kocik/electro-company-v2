@@ -15,6 +15,9 @@
         align-self: center; 
         justify-content: space-between;
         width: 50%;      
+        h5 {
+            justify-content: start;
+        }
     }
     .form_container {
         flex: 0 0 40%;
@@ -90,7 +93,7 @@
 
 @include mobile {
     .contact_container {
-        height: 100vh;
+        height: 150vh;
         h2 {
             flex: 0 0 10%;
         }
@@ -105,7 +108,7 @@
         }
         .company_data {
             address {
-              font-size: 32px;
+              font-size: 20px;
             }
         }
     }

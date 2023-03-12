@@ -25,6 +25,7 @@
             padding: 30px 40px;
             p {
                 font-size: 22px;
+                text-align: justify;
             }
         }
     }
@@ -44,12 +45,18 @@
 
 @include mobile {
     .blog_container {
-        height: 180vh;
+        height: 260vh;
         h2 {
             flex: 0 0 10%;
         }
         .blog_container_inner {
             grid-template-columns: 1fr;
+            padding: 10px 40px;
+            .blog_article {
+                p {
+                    font-size: 16px;
+                }
+            }
         }
     }
 }

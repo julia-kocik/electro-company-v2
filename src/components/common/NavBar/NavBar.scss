@@ -9,6 +9,7 @@
     z-index: 1;
     width: 100%;
     .burger_mobile {
+        flex: 0 0 25%;
         display: grid;
         place-items: center;
         .burger_icon {
