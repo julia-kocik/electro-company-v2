@@ -2,16 +2,17 @@
 
 .blog_content_container {
     height: auto;
-    background-image: url('https://images.unsplash.com/photo-1514803400321-3ca29fc47334?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80');
+    background-image: url('https://images.unsplash.com/photo-1514803400321-3ca29fc47334?ixlib=rb-4.0.3&ixid=&auto=format&fit=crop&w=2072&q=80');
     background-size: 100% 100%;
     .blog_content_overlay {
         width: 100%;
         height: 100%;
         background-color: rgba(31, 30, 30, 0.8);  
-        padding: 100px 0 60px 0;
+        padding: 160px 0 60px 0;
         backdrop-filter: blur(6px);
         .article_container {
-            border: 2px solid #fff;  
+            border: 2px solid $color-white;  
+            box-shadow: $box-shadow;
             margin: 0 160px;
             border-radius: 22px;
             .img_container {
@@ -27,11 +28,11 @@
             }
             .article_content {
                 color: #fff;
-                font-size: 24px;
                 padding: 80px;
                 margin: 0;
                 text-align: justify;
-                line-height: 44px;
+                line-height: 38px;
+                font-size: 22px;
                 .article_social {
                     text-align: end;
                 }
@@ -39,4 +40,48 @@
         }
     }
    
+}
+
+
+@include tablet {
+    .blog_content_container {
+        .blog_content_overlay {
+            .article_container {
+                margin: 0 50px;
+                .img_container {
+                    height: 450px;
+                }
+                .article_content {
+                    line-height: 46px;
+                    font-size: 32px;
+                    padding: 40px;
+                    h2 {
+                        margin: 38px 0;
+                    }
+                }
+            }
+        }
+    }   
+}
+
+@include mobile {
+    .blog_content_container {
+        .blog_content_overlay {
+            .article_container {
+                margin: 0 20px;
+                .img_container {
+                    height: 450px;
+                }
+                .article_content {
+                    line-height: 32px;
+                    font-size: 24px;
+                    padding: 20px;
+                    text-align: start;
+                    h2 {
+                        margin: 38px 0;
+                    }
+                }
+            }
+        }
+    }  
 }

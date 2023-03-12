@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import NavBar from '../../common/NavBar/NavBar'
+import Title from '../../common/Title/Title'
 import './Article.scss'
 
 const BlogContent = (): JSX.Element => {
@@ -13,9 +14,10 @@ const BlogContent = (): JSX.Element => {
       <div className="blog_content_overlay">
         <article className='article_container'>
           <div className="img_container">
-            <img src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Smart Home" />
+            <img src="https://images.pexels.com/photos/225232/pexels-photo-225232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Smart Home" />
           </div>
           <div className='article_content'>
+            <Title title='Title of the article'></Title>
             <div className='article_data'><span>Data publikacji: </span></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tristique dolor. Aenean ut justo non nulla vestibulum molestie. Aliquam scelerisque purus vitae urna placerat lobortis. Nullam semper nisi vel libero facilisis consequat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque rutrum leo vel turpis bibendum, id congue ex imperdiet. Duis tincidunt sollicitudin dolor, vel hendrerit sem rutrum vel. Nulla facilisi. Fusce vel est at magna rhoncus consequat. Maecenas suscipit bibendum urna, quis dapibus ipsum rutrum nec. Vivamus eu nulla ac elit sagittis blandit. Nullam vel lorem non mauris tristique posuere eget in tortor. Duis ac nisi euismod, laoreet quam vel, bibendum orci. Aenean tincidunt justo id mi imperdiet, sed suscipit orci efficitur.
 
