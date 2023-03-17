@@ -40,6 +40,11 @@ const BlogSection = (): JSX.Element => {
           </Link>
         </article>
       </div>
+      <div className='blog_redirect'>
+        <Link to='/blog'>
+          <Button title='pokaż wszystko' color='light'></Button>
+        </Link>
+      </div>
     </div>
   )
 }

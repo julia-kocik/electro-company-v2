@@ -1,16 +1,16 @@
 @import '../../../settings.scss';
 
 .blog_container {
-    height: 100vh;
+    height: 120vh;
     background-color: rgba(31, 30, 30, 0.6);
     color: $color-white;
     display: flex;
     flex-direction: column;
     h2{
-        flex: 0 0 20%;
+        flex: 0 0 10%;
     }
     .blog_container_inner {
-        flex: 0 0 80%;
+        flex: 0 0 70%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 80px;
@@ -28,6 +28,12 @@
                 text-align: justify;
             }
         }
+    }
+    .blog_redirect {
+        flex: 0 0 10%;
+        display: grid;
+        justify-items: end;
+        padding-right: 80px;
     }
 }
 
