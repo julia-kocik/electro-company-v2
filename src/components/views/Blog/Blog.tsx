@@ -36,10 +36,6 @@ const Blog = (): JSX.Element => {
     fetchArticles()
   }, [])
 
-  useEffect(() => {
-    console.log(articles)
-  }, [articles])
-
   const [currentPage, setCurrentPage] = useState(1)
   const [articlesPerPage] = useState(3)
   return (
