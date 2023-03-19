@@ -17,6 +17,9 @@ interface articleType {
 
 const Blog = (): JSX.Element => {
   const [articles, setArticles] = useState<articleType[]>([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [articlesPerPage] = useState(3)
+  const [sliced, setSliced] = useState<articleType[]>([])
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -26,7 +29,6 @@ const Blog = (): JSX.Element => {
       try {
         const data = await getArticles()
         if (data) {
-          // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
           setArticles(data)
         }
       } catch (error) {
@@ -36,15 +38,20 @@ const Blog = (): JSX.Element => {
     fetchArticles()
   }, [])
 
-  const [currentPage, setCurrentPage] = useState(1)
-  const [articlesPerPage] = useState(3)
+  useEffect(() => {
+    const indexOfLastTrip = currentPage * articlesPerPage
+    const indexOfFirstTrip = indexOfLastTrip - articlesPerPage
+    const currentArticles = articles.slice(indexOfFirstTrip, indexOfLastTrip)
+    setSliced(currentArticles)
+  }, [currentPage, articles])
+
   return (
     <div className='blog_all_container'>
         <NavBar />
       <div className="blog_all_overlay">
       <Title title='Poznaj nas lepiej'/>
         <div className="blog_all_inner">
-          {articles.map((article: articleType, index: number) => {
+          {sliced.map((article: articleType, index: number) => {
             const date = secondsToDate(article.published.seconds).toLocaleDateString()
             return (
             <article key={index} className='blog_all_article'>
@@ -61,7 +68,7 @@ const Blog = (): JSX.Element => {
         </div>
         <Pagination
           postsPerPage={articlesPerPage}
-          totalPosts={6}
+          totalPosts={articles.length}
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}/>
       </div>
