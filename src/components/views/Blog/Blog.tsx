@@ -16,7 +16,7 @@ interface articleType {
 }
 
 const Blog = (): JSX.Element => {
-  const [articles, setArticles] = useState<any>([])
+  const [articles, setArticles] = useState<articleType[]>([])
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -33,7 +33,6 @@ const Blog = (): JSX.Element => {
         console.log(error)
       }
     }
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     fetchArticles()
   }, [])
 
