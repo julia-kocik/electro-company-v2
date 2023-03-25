@@ -39,10 +39,25 @@
 }
 
 
-@include tablet {
-    
+@include tablet {    
+    .blog_all_container {
+        .blog_all_inner {
+           grid-template-columns: 1fr;
+           align-items: start;
+        }
+    }
 }
 
 @include mobile {
-    
+    .blog_all_container {
+        min-height: 140vh;
+        .blog_all_overlay {
+            min-height: 140vh;
+        }
+        .blog_all_inner {
+            grid-template-columns: 1fr;
+            align-items: start;
+            padding: 40px;
+        }
+    }
 }

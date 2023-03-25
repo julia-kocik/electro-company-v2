@@ -19,3 +19,21 @@
         color: $color-black;
     }
 }
+
+
+@include tablet {    
+    .pagination {
+        .page_item {
+            font-size: 24px;
+        }
+    }
+}
+
+@include mobile {
+    .pagination {
+        padding: 0;
+        .page_item {
+            font-size: 24px;
+        }
+    }
+}
