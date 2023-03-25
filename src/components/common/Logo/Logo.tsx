@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Logo = (): JSX.Element => {
   return (
     <div className='logo_container'>
-      <Link to='/'>
+      <Link to='/#start'>
         <FaRegLightbulb className='logo'/>
       </Link>
     </div>

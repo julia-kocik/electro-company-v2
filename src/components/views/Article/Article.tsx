@@ -80,7 +80,7 @@ const BlogContent = (): JSX.Element => {
                       <span>{formattedDate}</span>
                       </div>
                     <p>{ article?.content}</p>
-                  <div className='article_social'>Udostępnij</div>
+                  <div className='article_social'></div>
                   </div>
                 </article>
               )

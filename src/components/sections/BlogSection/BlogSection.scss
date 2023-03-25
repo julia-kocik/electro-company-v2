@@ -1,7 +1,7 @@
 @import '../../../settings.scss';
 
 .blog_container {
-    height: 140vh;
+    height: 124vh;
     background-color: rgba(31, 30, 30, 0.6);
     color: $color-white;
     display: flex;
@@ -12,12 +12,12 @@
         flex: 0 0 10%;
     }
     .blog_container_inner {
-        flex: 0 0 70%;
+        flex: 0 0 60%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 80px;
         place-items: center;
-        padding: 40px 80px;
+        padding: 0 80px 40px 80px;
         .blog_article {
             border: 1px solid $color-white;
             box-shadow: $box-shadow;
@@ -41,7 +41,7 @@
 
 @include tablet {
     .blog_container {
-        height: 200vh;
+        height: 180vh;
         h2 {
             flex: 0 0 10%;
             padding-top: 0;
@@ -49,6 +49,9 @@
         .blog_container_inner {
             grid-template-columns: 1fr;
             .blog_article {
+                h3 {
+                    font-size: 32px;
+                }
                 padding: 50px;
                 p {
                     font-size: 28px;
@@ -60,9 +63,10 @@
 
 @include mobile {
     .blog_container {
-        height: 260vh;
+        height: 250vh;
         h2 {
             flex: 0 0 10%;
+            padding-top: 0;
         }
         .blog_container_inner {
             grid-template-columns: 1fr;

@@ -1,13 +1,14 @@
 @import '../../../settings.scss';
 
 .contact_container {
-    height: 140vh;
+    height: 124vh;
     background-color: rgba(31, 30, 30, 0.6);
     color: $color-white;
     display: flex;
     flex-direction: column;
     h2 {
-        flex: 0 0 20%;
+        flex: 0 0 10%;
+        padding-top: 60px;
     }
     .contact_data {
         flex: 0 0 10%;
@@ -97,6 +98,7 @@
         height: 150vh;
         h2 {
             flex: 0 0 10%;
+            padding-top: 60px;
         }
         .contact_data {
             width: 90%;   

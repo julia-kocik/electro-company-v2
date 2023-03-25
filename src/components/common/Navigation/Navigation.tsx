@@ -28,9 +28,6 @@ const Navigation: React.FC<NavigationProps> = ({ showMobMenu, setShowMobMenu, bu
     <div className='navigation_container'>
       <ul ref={ref} className={`${showMobMenu ? 'show' : ''}`}>
         <li>
-          <Link to="/#start">Start</Link>
-        </li>
-        <li>
           <Link to="/#offer">Oferta</Link>
         </li>
         <li>
