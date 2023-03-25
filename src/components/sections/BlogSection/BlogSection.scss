@@ -1,13 +1,14 @@
 @import '../../../settings.scss';
 
 .blog_container {
-    height: 120vh;
+    height: 140vh;
     background-color: rgba(31, 30, 30, 0.6);
     color: $color-white;
     display: flex;
     flex-direction: column;
     position: relative;
     h2 {
+        padding-top: 60px;
         flex: 0 0 10%;
     }
     .blog_container_inner {
