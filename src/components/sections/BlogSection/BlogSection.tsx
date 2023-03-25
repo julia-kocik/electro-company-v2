@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { getArticles } from '../../../config'
 import Button from '../../common/Button/Button'
 import Loader from '../../common/Loader/Loader'
+import Error from '../../common/Error/Error'
 import Title from '../../common/Title/Title'
 import './BlogSection.scss'
 
@@ -46,7 +47,7 @@ const BlogSection = (): JSX.Element => {
       <Title title='Poznaj nas lepiej'/>
       <div className="blog_container_inner">
         {error
-          ? <p>Error</p>
+          ? <Error/>
           : loading
             ? <Loader />
             : articles.slice(0, 3).map((article: articleType, index: number) => (

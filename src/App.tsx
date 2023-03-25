@@ -6,11 +6,12 @@ import {
 } from 'react-router-dom'
 import Article from './components/views/Article/Article'
 import Blog from './components/views/Blog/Blog'
+import Error from './components/common/Error/Error'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Homepage/>
+    element: <Homepage />
   },
   {
     path: '/blog',
@@ -19,12 +20,16 @@ const router = createBrowserRouter([
   {
     path: '/blog/:id',
     element: <Article/>
+  },
+  {
+    path: '*',
+    element: <Error notFound={true} />
   }
 ])
 
 const App = (): JSX.Element => {
   return (
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   )
 }
 

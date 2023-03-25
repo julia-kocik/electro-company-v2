@@ -8,6 +8,7 @@ import './Blog.scss'
 import { getArticles } from '../../../config'
 import { secondsToDate } from '../../../utils/utils'
 import Loader from '../../common/Loader/Loader'
+import Error from '../../common/Error/Error'
 
 interface ArticleType {
   title: string
@@ -61,7 +62,7 @@ const Blog = (): JSX.Element => {
       <div className="blog_all_overlay">
         <Title title="Poznaj nas lepiej" />
         {error
-          ? <p>Error</p>
+          ? <Error/>
           : loading
             ? <Loader />
             : (

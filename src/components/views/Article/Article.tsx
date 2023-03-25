@@ -6,7 +6,7 @@ import './Article.scss'
 import { useParams } from 'react-router-dom'
 import { secondsToDate } from '../../../utils/utils'
 import Loader from '../../common/Loader/Loader'
-// import { secondsToDate } from '../../../utils/utils'
+import Error from '../../common/Error/Error'
 
 interface ArticleType {
   title: string
@@ -66,7 +66,7 @@ const BlogContent = (): JSX.Element => {
         <NavBar />
       <div className="blog_content_overlay">
         {error
-          ? <p>Error</p>
+          ? <Error/>
           : loading
             ? <Loader />
             : (
