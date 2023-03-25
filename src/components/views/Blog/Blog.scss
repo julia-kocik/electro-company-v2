@@ -19,7 +19,8 @@
         flex: 0 0 70%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 80px;
+        gap: 80px 60px;
+
         place-items: center;
         padding: 40px 80px;
         .blog_all_article {
@@ -45,10 +46,6 @@
             width: 100%;
             height: 60%;
            }
-            p {
-                font-size: 22px;
-                text-align: justify;
-            }
         }
     }
    

@@ -52,11 +52,13 @@ const BlogSection = (): JSX.Element => {
             ? <Loader />
             : articles.slice(0, 3).map((article: articleType, index: number) => (
               <article key={index} className='blog_article'>
-                <h3>{article.title}</h3>
-              <p>{article.content.split('.')[0]}...</p>
-              <Link to={`/blog/${index}`}>
-                <Button title='czytaj wiecej' color='light' />
-              </Link>
+                <img src={article.main_image} />
+                <div className="button_container">
+                  <h2>{article.title}</h2>
+                  <Link to={`/blog/${index}`}>
+                    <Button title="czytaj wiecej" color="light" />
+                  </Link>
+                </div>
             </article>
             ))
         }
