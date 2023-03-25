@@ -30,8 +30,12 @@
             list-style-type: none;
             li {
                 color: #fff;
-                font-size: 48px;
-                margin-top: 14px;
+                font-size: 44px;
+                display: flex;
+                align-items: center;
+                .icon {
+                    margin-right: 20px;
+                }
             }
         }
     }
