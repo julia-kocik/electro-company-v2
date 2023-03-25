@@ -62,22 +62,14 @@
         }
         .blog_container_inner {
             grid-template-columns: 1fr;
-            .blog_article {
-                h3 {
-                    font-size: 32px;
-                }
-                padding: 50px;
-                p {
-                    font-size: 28px;
-                }
-            }
+            padding: 0 40px 40px 0;
         }
     }
 }
 
 @include mobile {
     .blog_container {
-        height: 250vh;
+        height: auto;        
         h2 {
             flex: 0 0 10%;
             padding-top: 0;
@@ -89,7 +81,15 @@
                 p {
                     font-size: 16px;
                 }
+                .button_container {
+                    h2 {
+                        min-height: 90px;
+                    }
+                }
             }
+        }
+        .blog_redirect {
+            margin-bottom: 40px;
         }
     }
 }
