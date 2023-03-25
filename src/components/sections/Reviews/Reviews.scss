@@ -76,8 +76,10 @@
     .reviews_container {
         h2 {
             flex: 0 0 10%;
+            padding-top: 80px;
         }
         .reviews_container_inner {
+            flex: 0 0 70%;
             .reviews_content_container {
                 height: 80%;
                 width: 80%;

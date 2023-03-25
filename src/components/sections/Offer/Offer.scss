@@ -43,14 +43,15 @@
 
 @include tablet {
     .offer_container {
-        height: 80vh;
+        height: 100vh;
         .offer_content {
             width: 100%;
             height: 100%;
+            padding-bottom: 160px;
             ul{
-                padding: 20px 40px;
+                padding: 50px;
                 li {
-                    font-size: 36px;
+                    font-size: 48px;
                 }
             }
         }

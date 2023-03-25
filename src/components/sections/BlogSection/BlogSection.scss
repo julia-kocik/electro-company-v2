@@ -41,12 +41,19 @@
 
 @include tablet {
     .blog_container {
-        height: 180vh;
+        height: 200vh;
         h2 {
             flex: 0 0 10%;
+            padding-top: 0;
         }
         .blog_container_inner {
             grid-template-columns: 1fr;
+            .blog_article {
+                padding: 50px;
+                p {
+                    font-size: 28px;
+                }
+            }
         }
     }
 }
