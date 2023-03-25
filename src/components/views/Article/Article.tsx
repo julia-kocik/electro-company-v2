@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom'
 import { secondsToDate } from '../../../utils/utils'
 import Loader from '../../common/Loader/Loader'
 import Error from '../../common/Error/Error'
+import ReactMarkdown from 'react-markdown'
 
 interface ArticleType {
   title: string
@@ -30,8 +31,6 @@ const BlogContent = (): JSX.Element => {
   const [error, setError] = useState(false)
   const [article, setArticle] = useState<ArticleType | undefined>(initialState)
   const params = useParams<{ id: string }>()
-
-  // use the id parameter here
   const { id } = params
 
   useEffect(() => {
@@ -79,7 +78,11 @@ const BlogContent = (): JSX.Element => {
                     <div className='article_data'>
                       <span>{formattedDate}</span>
                       </div>
-                    <p>{ article?.content}</p>
+                    <p>
+                      <ReactMarkdown>
+                        {article?.content ? article.content : ''}
+                      </ReactMarkdown>
+                    </p>
                   <div className='article_social'></div>
                   </div>
                 </article>

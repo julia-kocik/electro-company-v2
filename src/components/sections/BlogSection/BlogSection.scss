@@ -17,7 +17,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 80px 60px;
         place-items: center;
-        padding: 0 80px 40px 80px;
+        padding: 0 80px;
         .blog_article {
             border: 1px solid $color-white;
             height: 500px;
@@ -62,7 +62,7 @@
         }
         .blog_container_inner {
             grid-template-columns: 1fr;
-            padding: 0 40px 40px 0;
+            padding: 0 40px;
         }
     }
 }
