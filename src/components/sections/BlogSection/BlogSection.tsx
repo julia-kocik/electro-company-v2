@@ -53,7 +53,7 @@ const BlogSection = (): JSX.Element => {
             : articles.slice(0, 3).map((article: articleType, index: number) => (
               <article key={index} className='blog_article'>
                 <h3>{article.title}</h3>
-              <p>{article.content.substring(0, 200)}...</p>
+              <p>{article.content.split('.')[0]}...</p>
               <Link to={`/blog/${index}`}>
                 <Button title='czytaj wiecej' color='light' />
               </Link>

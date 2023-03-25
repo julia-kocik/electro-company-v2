@@ -6,7 +6,7 @@ import Pagination from '../../common/Pagination/Pagination'
 import Title from '../../common/Title/Title'
 import './Blog.scss'
 import { getArticles } from '../../../config'
-import { secondsToDate } from '../../../utils/utils'
+// import { secondsToDate } from '../../../utils/utils'
 import Loader from '../../common/Loader/Loader'
 import Error from '../../common/Error/Error'
 
@@ -69,15 +69,16 @@ const Blog = (): JSX.Element => {
               <>
                 <div className="blog_all_inner">
                   {sliced.map((article: ArticleType, index: number) => {
-                    const date = secondsToDate(article.published.seconds).toLocaleDateString()
+                    // const date = secondsToDate(article.published.seconds).toLocaleDateString()
                     return (
                       <article key={index} className="blog_all_article">
-                        <h2>{article.title}</h2>
-                        <p>{date}</p>
-                        <p>{article.content.substring(0, 200)}...</p>
-                        <Link to={`/blog/${index}`}>
-                          <Button title="czytaj wiecej" color="light" />
-                        </Link>
+                        <img src={article.main_image} />
+                        <div className="button_container">
+                          <h2>{article.title}</h2>
+                          <Link to={`/blog/${index}`}>
+                            <Button title="czytaj wiecej" color="light" />
+                          </Link>
+                        </div>
                       </article>
                     )
                   })}

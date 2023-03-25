@@ -102,6 +102,9 @@
         }
         .contact_data {
             width: 90%;   
+            h5:nth-child(2) {
+                text-align: end;
+            }
         }
         .form_container {
             form {

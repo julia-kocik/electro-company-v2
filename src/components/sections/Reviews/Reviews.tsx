@@ -6,12 +6,9 @@ import Subtitle from '../../common/Subtitle/Subtitle'
 import { useLocation } from 'react-router-dom'
 
 const arr = [
-  'Niedawno przeszedłem do tej firmy elektrycznej i jestem zaskoczony, ile pieniędzy oszczędzam każdego miesiąca na rachunkach za energię. Dodatkowo, ich obsługa klienta jest na najwyższym poziomie!',
-  'Cieszę się, że znalazłem tę firmę elektryczną - ich opcje odnawialnych źródeł energii umożliwiają łatwe dbanie o środowisko, jednocześnie ciesząc się niezawodną usługą elektryczną.',
-  'Ta firma elektryczna naprawdę ceni swoich klientów. Za każdym razem, gdy miałem problem, ich zespół wsparcia zawsze szybko reaguje i rozwiązuje problem.',
-  'Nigdy nie doświadczyłem awarii ani przerw w usłudze z tą firmą elektryczną. Ich infrastruktura jest wyraźnie dobrze utrzymana, a to daje mi spokój, wiedząc, że zawsze na nich można polegać.',
-  'Doceniam przejrzystość tej firmy elektrycznej w kwestii ich cenników i faktur. Nie ma żadnych ukrytych opłat ani niespodzianek, a ja czuję się pewny, że otrzymuję wartość za swoje pieniądze.',
-  'Proces instalacji moich paneli słonecznych był bardzo prosty dzięki doświadczonym i przyjaznym technikom tej firmy elektrycznej. Poświęcili mi czas, wyjaśnili wszystko i odpowiedzieli na moje pytania.'
+  'Firma wykonała u mnie instalację elektryczną i jestem bardzo zadowolony z ich pracy. Elektrycy byli bardzo profesjonalni i dokładni, a praca została wykonana zgodnie z moimi oczekiwaniami.',
+  'Zdecydowanie polecam tę firmę do montażu wideodomofonu. Elektrycy przyjechali na czas i bardzo szybko zainstalowali urządzenie. Pokazali mi, jak działa i jak go obsługiwać.',
+  'Firma zainstalowała u mnie płytę AGD. Elektrycy byli bardzo kompetentni i wiedzieli, co robią. Praca została wykonana szybko i sprawnie, a wszystko działa bez problemów.'
 ]
 
 const Reviews = (): JSX.Element => {
