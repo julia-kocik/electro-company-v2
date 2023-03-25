@@ -5,6 +5,7 @@ import Title from '../../common/Title/Title'
 import './Article.scss'
 import { useParams } from 'react-router-dom'
 import { secondsToDate } from '../../../utils/utils'
+import Loader from '../../common/Loader/Loader'
 // import { secondsToDate } from '../../../utils/utils'
 
 interface ArticleType {
@@ -64,21 +65,26 @@ const BlogContent = (): JSX.Element => {
     <div className='blog_content_container'>
         <NavBar />
       <div className="blog_content_overlay">
-          {error && <p>Error</p>}
-          {loading && <p>Loading</p>}
-          <article className='article_container'>
-            <div className="img_container">
-              <img src={article?.main_image} alt="Smart Home" />
-            </div>
-            <div className='article_content'>
-              <Title title={article?.title ? article.title : ''}></Title>
-              <div className='article_data'>
-                <span>{formattedDate}</span>
-                </div>
-              <p>{ article?.content}</p>
-            <div className='article_social'>Udostępnij</div>
-            </div>
-          </article>
+        {error
+          ? <p>Error</p>
+          : loading
+            ? <Loader />
+            : (
+                <article className='article_container'>
+                  <div className="img_container">
+                    <img src={article?.main_image} alt="Smart Home" />
+                  </div>
+                  <div className='article_content'>
+                    <Title title={article?.title ? article.title : ''}></Title>
+                    <div className='article_data'>
+                      <span>{formattedDate}</span>
+                      </div>
+                    <p>{ article?.content}</p>
+                  <div className='article_social'>Udostępnij</div>
+                  </div>
+                </article>
+              )
+        }
       </div>
     </div>
   )

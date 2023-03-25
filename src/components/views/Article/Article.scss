@@ -2,6 +2,7 @@
 
 .blog_content_container {
     height: auto;
+    min-height: 100vh;
     background-image: url('https://images.unsplash.com/photo-1514803400321-3ca29fc47334?ixlib=rb-4.0.3&ixid=&auto=format&fit=crop&w=2072&q=80');
     background-size: 100% 100%;
     .blog_content_overlay {
@@ -10,6 +11,7 @@
         background-color: rgba(31, 30, 30, 0.8);  
         padding: 160px 0 60px 0;
         backdrop-filter: blur(6px);
+        min-height: 100vh;
         .article_container {
             border: 2px solid $color-white;  
             box-shadow: $box-shadow;

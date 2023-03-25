@@ -7,6 +7,7 @@ import Title from '../../common/Title/Title'
 import './Blog.scss'
 import { getArticles } from '../../../config'
 import { secondsToDate } from '../../../utils/utils'
+import Loader from '../../common/Loader/Loader'
 
 interface ArticleType {
   title: string
@@ -59,29 +60,37 @@ const Blog = (): JSX.Element => {
       <NavBar />
       <div className="blog_all_overlay">
         <Title title="Poznaj nas lepiej" />
-        <div className="blog_all_inner">
-          {error && <p>Error</p>}
-          {loading && <p>Loading</p>}
-          {sliced.map((article: ArticleType, index: number) => {
-            const date = secondsToDate(article.published.seconds).toLocaleDateString()
-            return (
-              <article key={index} className="blog_all_article">
-                <h2>{article.title}</h2>
-                <p>{date}</p>
-                <p>{article.content.substring(0, 200)}...</p>
-                <Link to={`/blog/${index}`}>
-                  <Button title="czytaj wiecej" color="light" />
-                </Link>
-              </article>
-            )
-          })}
-        </div>
-        <Pagination
-          postsPerPage={articlesPerPage}
-          totalPosts={articles.length}
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-        />
+        {error
+          ? <p>Error</p>
+          : loading
+            ? <Loader />
+            : (
+              <>
+                <div className="blog_all_inner">
+                  {sliced.map((article: ArticleType, index: number) => {
+                    const date = secondsToDate(article.published.seconds).toLocaleDateString()
+                    return (
+                      <article key={index} className="blog_all_article">
+                        <h2>{article.title}</h2>
+                        <p>{date}</p>
+                        <p>{article.content.substring(0, 200)}...</p>
+                        <Link to={`/blog/${index}`}>
+                          <Button title="czytaj wiecej" color="light" />
+                        </Link>
+                      </article>
+                    )
+                  })}
+                </div>
+                <Pagination
+                  postsPerPage={articlesPerPage}
+                  totalPosts={articles.length}
+                  setCurrentPage={setCurrentPage}
+                  currentPage={currentPage}
+                />
+              </>
+              )
+        }
+
       </div>
     </div>
   )

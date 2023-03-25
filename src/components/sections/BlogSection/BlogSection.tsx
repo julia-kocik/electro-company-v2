@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { getArticles } from '../../../config'
 import Button from '../../common/Button/Button'
+import Loader from '../../common/Loader/Loader'
 import Title from '../../common/Title/Title'
 import './BlogSection.scss'
 
@@ -16,16 +17,20 @@ const BlogSection = (): JSX.Element => {
   const location = useLocation()
   const blogsectionRef = useRef<HTMLDivElement>(null)
   const [articles, setArticles] = useState<articleType[]>([])
-
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
   useEffect(() => {
     const fetchArticles = async (): Promise<void> => {
       try {
         const data = await getArticles()
         if (data) {
           setArticles(data)
+          setLoading(false)
+          setError(false)
         }
       } catch (error) {
-        console.log(error)
+        console.error(error)
+        setError(true)
       }
     }
     fetchArticles()
@@ -40,15 +45,20 @@ const BlogSection = (): JSX.Element => {
     <div className='blog_container' ref={blogsectionRef} id='blogsection'>
       <Title title='Poznaj nas lepiej'/>
       <div className="blog_container_inner">
-        {articles.slice(0, 3).map((article: articleType, index: number) => (
-          <article key={index} className='blog_article'>
-            <h2>{article.title}</h2>
-          <p>{article.content.substring(0, 200)}...</p>
-          <Link to={`/blog/${index}`}>
-            <Button title='czytaj wiecej' color='light' />
-          </Link>
-        </article>
-        ))}
+        {error
+          ? <p>Error</p>
+          : loading
+            ? <Loader />
+            : articles.slice(0, 3).map((article: articleType, index: number) => (
+              <article key={index} className='blog_article'>
+                <h2>{article.title}</h2>
+              <p>{article.content.substring(0, 200)}...</p>
+              <Link to={`/blog/${index}`}>
+                <Button title='czytaj wiecej' color='light' />
+              </Link>
+            </article>
+            ))
+        }
       </div>
       <div className='blog_redirect'>
         <Link to='/blog'>

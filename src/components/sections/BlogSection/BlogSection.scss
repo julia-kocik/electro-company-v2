@@ -6,7 +6,8 @@
     color: $color-white;
     display: flex;
     flex-direction: column;
-    h2{
+    position: relative;
+    h2 {
         flex: 0 0 10%;
     }
     .blog_container_inner {
