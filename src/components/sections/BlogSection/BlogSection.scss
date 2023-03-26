@@ -20,7 +20,7 @@
         padding: 0 80px;
         .blog_article {
             border: 1px solid $color-white;
-            height: 500px;
+            height: 480px;
             box-shadow: $box-shadow;
             border-radius: 10px;
             .button_container {
@@ -55,14 +55,14 @@
 
 @include tablet {
     .blog_container {
-        height: 180vh;
+        height: 170vh;
         h2 {
             flex: 0 0 10%;
             padding-top: 0;
         }
         .blog_container_inner {
             grid-template-columns: 1fr;
-            padding: 0 40px;
+            padding: 0 40px 20px 40px;
         }
     }
 }
@@ -72,7 +72,7 @@
         height: auto;        
         h2 {
             flex: 0 0 10%;
-            padding-top: 0;
+            padding-top: 80px;
         }
         .blog_container_inner {
             grid-template-columns: 1fr;
