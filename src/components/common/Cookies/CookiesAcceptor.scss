@@ -1,0 +1,55 @@
+@import '../../../settings.scss';
+
+.cookies_container {
+    background-color: black;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    span {
+        padding: 0 10px;
+    }
+    .btn_container {
+        button {
+            margin: 0 3px;
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
+
+
+@include tablet {  
+  .cookies_container {
+    height: 100px;
+       span {
+            padding: 0 10px;
+            flex: 0 0 70%;
+        }
+    } 
+}
+
+@include mobile {
+    .cookies_container {
+        height: 130px;
+        flex-direction: column;
+        span {
+            text-align: left;
+            padding: 10px;
+        }
+        .btn_container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            button {
+                padding: 4px 12px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}

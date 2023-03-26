@@ -7,6 +7,8 @@ import {
 import Article from './components/views/Article/Article'
 import Blog from './components/views/Blog/Blog'
 import Error from './components/common/Error/Error'
+import { CookiesProvider } from 'react-cookie'
+import CookiesAcceptor from './components/common/Cookies/CookiesAcceptor'
 
 const router = createBrowserRouter([
   {
@@ -29,7 +31,12 @@ const router = createBrowserRouter([
 
 const App = (): JSX.Element => {
   return (
-      <RouterProvider router={router} />
+    <CookiesProvider>
+      <div className="App">
+        <RouterProvider router={router} />
+        <CookiesAcceptor />
+      </div>
+    </CookiesProvider>
   )
 }
 
