@@ -88,7 +88,7 @@ const Contact = (): JSX.Element => {
       <Title title='Skontaktuj się z nami' />
       <div className='contact_data'>
         <Subtitle title='Email: biuro@montroe.com' />
-        <Subtitle title='Telefon: 515737356' />
+        <Subtitle title='Telefon: 790270070' />
       </div>
       <div className="form_container">
          {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
