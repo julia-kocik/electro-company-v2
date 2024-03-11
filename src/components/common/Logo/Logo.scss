@@ -4,9 +4,17 @@
     flex: 0 0 25%;
     display: grid;
     place-items: center;
-    .logo {
-        font-size: 42px;
-        color: $color-white;
+    width: 100px;
+    padding: 0 1rem;
+    a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        img {
+            height: 60px;
+            width: 60px;
+        }
     }
 }
 

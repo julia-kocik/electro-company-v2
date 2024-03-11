@@ -1,16 +1,17 @@
-import React from 'react'
-import './Logo.scss'
-import { FaRegLightbulb } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import "./Logo.scss";
+import { Link } from "react-router-dom";
 
 const Logo = (): JSX.Element => {
   return (
-    <div className='logo_container'>
-      <Link to='/#start'>
-        <FaRegLightbulb className='logo'/>
+    <div className="logo_container">
+      <Link to="/#start">
+        <img
+          src="/logo-no-background-white.png"
+          alt="Białe logo na czarnym tle"
+        />
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

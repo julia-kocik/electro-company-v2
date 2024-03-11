@@ -6,6 +6,9 @@
     height: 40px;
     display: flex;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     span {
         padding: 0 10px;
     }
