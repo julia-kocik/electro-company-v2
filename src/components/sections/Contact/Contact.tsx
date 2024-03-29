@@ -56,24 +56,36 @@ const Contact = (): JSX.Element => {
       return
     }
     try {
-      const response = await fetch('https://formkeep.com/f/da906ed4f464', {
+      const response = await fetch('http://localhost:8080/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'accept-charset': 'UTF-8'
         },
         body: JSON.stringify(formfields)
-      })
-      await response.json()
-      showInfo('Otrzymaliśmy Twoją wiadomość!')
-      setTimeout(() => {
-        showInfo('')
-      }, 3000)
+      });
+    
+      if (response.ok) {
+        const message = await response.text(); 
+        console.log(message)
+        showInfo("Otrzymaliśmy Twoją wiadomość"); 
+        setTimeout(() => {
+          showInfo('');
+        }, 3000);
+      } else {
+        showInfo('Wystąpił błąd, spróbuj ponownie później.');
+        setTimeout(() => {
+          showInfo('');
+        }, 3000);
+      }
+  
     } catch (error: unknown) {
       if (error instanceof Error) {
+        console.log(error.message)
+
         showInfo(error.message)
       } else {
-        const errorMessage = typeof error === 'string' ? error : 'An unknown error occurred'
+        const errorMessage = typeof error === 'string' ? error : 'Wystąpił błąd, spróbuj ponownie później.'
         showInfo(errorMessage)
       }
       setTimeout(() => {
@@ -88,7 +100,7 @@ const Contact = (): JSX.Element => {
       <Title title='Skontaktuj się z nami' />
       <div className='contact_data'>
         <Subtitle title='Email: biuro@montroe.com' />
-        <Subtitle title='Telefon: 790270070' />
+        <Subtitle title='Telefon: 790-270-070' />
       </div>
       <div className="form_container">
         <form onSubmit={onSubmitHandler}>
