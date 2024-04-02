@@ -56,7 +56,7 @@ const Contact = (): JSX.Element => {
       return
     }
     try {
-      const response = await fetch('http://priv-electro-server-env.eba-8ihgm9ip.eu-north-1.elasticbeanstalk.com/send-email', {
+      const response = await fetch('http://localhost:8080/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
